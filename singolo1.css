@@ -160,11 +160,14 @@ main {
 
 .wrapper-services >p {
     font-family: Lato Light, sans-serif;
-    letter-spacing: 0.15px;
     color: #767e9e;
     font-size: 18px;
     line-height: 30px;
 
+}
+
+.wrapper-services >p  span{
+    letter-spacing: 0.15px;
 }
 
 .services-list {
