@@ -1,2 +1,2 @@
 # singolo
-[https://patrakovakris.github.io/singolo/]
+https://patrakovakris.github.io/singolo/
