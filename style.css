@@ -69,12 +69,14 @@ nav span {
     color: #494e62;
 }
 
-nav li:first-child {
+nav a.active {
     color: #f06c64;
+    cursor: pointer;
 }
 
-nav a:hover {
-    color: #f06c64;
+nav a:not(.active):hover {
+    /*color: #f06c64;*/
+    text-decoration: underline;
     cursor: pointer;
 }
 
@@ -89,9 +91,9 @@ main {
     overflow: hidden;
     width: auto;
     padding-top: 52px;
-    padding-bottom: 50px;
+    padding-bottom: 58px;
     background-color: #f06c64;
-    border-bottom: 15px solid #ea676b;
+    border-bottom: 6px solid #ea676b;
 }
 
 .slider-items {
@@ -138,7 +140,7 @@ main {
 
 /*services*/
 .services {
-    padding: 62px 30px 30px;
+    padding: 62px 30px 33px;
     background-color: #f2f2f2;
     border-bottom: 6px solid white;
 }
@@ -174,7 +176,7 @@ main {
 
 .services-list {
     display: flex;
-    padding-top: 45px;
+    padding-top: 48px;
     padding-left: 6px;
     flex-wrap: wrap;
 }
@@ -214,6 +216,7 @@ main {
 
 .services-item p {
     width: 220px;
+    height: 62px;
     font-family: Lato Light, sans-serif;
     font-size: 12px;
     line-height: 22px;
@@ -359,6 +362,7 @@ main {
 
 .people h3 {
     white-space: nowrap;
+    overflow: hidden;
     padding-top: 13px;
     margin-left: -1px;
     font-size: 18px;
@@ -588,6 +592,10 @@ form {
     width: 32px;
     height: 32px;
     margin-right: 8px;
+}
+
+.social-link:hover {
     cursor: pointer;
+    transform: scale(1.2);
 }
 
