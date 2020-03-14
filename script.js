@@ -3,6 +3,8 @@ window.onload = function(){
     addNavClickHandler();
     addTagsClickHandler();
     addImagesClickHandler();
+
+    openModalBlock();
 }
 
 const activeClikedTag = (clickedTag) =>{
@@ -12,8 +14,8 @@ function removeClikedElem(parentBlock, classchildBlock , removeClass){
     parentBlock.querySelectorAll(classchildBlock).forEach( el=> el.classList.remove(removeClass));
 }
 
+// Header: выбор тега
 const addNavClickHandler = () =>{
-
     let menu= document.getElementById('header-nav');
     menu.addEventListener('click', (event)=>{
         let clickedTag = event.target;
@@ -24,6 +26,7 @@ const addNavClickHandler = () =>{
     });
 }
 
+// Header: scroll for chosen block
 const addScroll = (clickedTag) =>{
     let link = document.querySelector(clickedTag.getAttribute('href'));
     link.scrollIntoView( {behavior: "smooth"});
@@ -46,7 +49,6 @@ const addTagsClickHandler = () =>{
 // Portfolio: выбор картинки
 const addImagesClickHandler = () =>{
     let images = document.getElementById('images-list');
-    console.log(images);
     images.addEventListener('click', (event)=>{
         let clickedTag = event.target;
         removeClikedElem(images, '.image img', 'active')
@@ -70,4 +72,30 @@ function changeNodes(childs, a, b) {
     const parent = childs[a].parentNode;
     const replaced = parent.replaceChild(childs[b], childs[a]);
     parent.insertBefore(replaced, childs[b]);
+}
+
+// Блок Get a Quote: modal window
+const openModalBlock = () =>{
+    let btn= document.getElementById('send');
+    let close_btn = document.getElementById('ok');
+    let form = document.getElementById("form");
+    let subjectModal = document.getElementById("Subject");
+    let descriptionModal = document.getElementById("Describe");
+
+    btn.addEventListener('click', (event)=>{
+        let subjectForm = document.getElementById("theme").value.toString();
+        let descriptionForm = document.getElementById("description").value.toString();
+        if (form.checkValidity()) {
+            event.preventDefault();
+            document.getElementById('modal').style.display = 'block';
+            (subjectForm === "") ? subjectModal.innerHTML = "Без темы" : subjectModal.innerHTML = "Тема: " + subjectForm;
+            (descriptionForm === "") ? descriptionModal.innerHTML = "Без описания" : descriptionModal.innerHTML = "Описание: " + descriptionForm;
+        }
+    });
+
+    close_btn.addEventListener('click', (event)=>{
+        document.getElementById('modal').style.display = 'none';
+        form.reset();
+    });
+
 }
