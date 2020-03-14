@@ -2,6 +2,7 @@ window.onload = function(){
     console.log('yeeess))')
     addNavClickHandler();
     addTagsClickHandler();
+    addImagesClickHandler();
 }
 
 const addNavClickHandler = () =>{
@@ -34,6 +35,18 @@ const addTagsClickHandler = () =>{
         let clickedTag = event.target;
         activeClikedTag(clickedTag);
         shuffleImages(images);
+        // (event.target.value ==='All') ? showAllImage(): filterImages();
+    });
+}
+
+// Portfolio: выбор картинки
+const addImagesClickHandler = () =>{
+    let images = document.getElementById('images-list');
+    console.log(images);
+    images.addEventListener('click', (event)=>{
+        images.querySelectorAll('.image img').forEach( el=> el.classList.remove('active'));
+        let clickedTag = event.target;
+        activeClikedTag(clickedTag);
     });
 }
 
