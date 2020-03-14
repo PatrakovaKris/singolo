@@ -28,34 +28,29 @@ const activeClikedTag = (clickedTag) =>{
 // Portfolio: выбор тегов
 const addTagsClickHandler = () =>{
     let tags = document.getElementById('tags');
+    let images = document.querySelectorAll('.image');
     tags.addEventListener('click', (event)=>{
         tags.querySelectorAll('.btn-nav').forEach( el=> el.classList.remove('active'));
         let clickedTag = event.target;
         activeClikedTag(clickedTag);
-        (event.target.value ==='All') ? showAllImage(): filterImages();
+        shuffleImages(images);
     });
 }
 
-function showAllImage(){
-    let images = document.querySelectorAll('.image');
-    images.forEach((image,i)=>{
-        image.classList.remove('image-hidden');
-    })
+// Portfolio: перемешивание картинок
+const shuffleImages = (images) =>{
+    for(let i = images.length - 1; i >= 1; --i) {
+        const newPos = rand(0, i);
+        changeNodes(images, i, newPos);
+    }
 }
 
-function filterImages(){
-    let images = document.querySelectorAll('.image');
-    let random=randomInteger(4,7);
-    images.forEach((image,i)=>{
-        image.classList.remove('image-hidden');
-        if(i%random === 0){
-            console.log(i, random, i%random);
-            image.classList.add('image-hidden');
-        }
-    })
+function rand(a, b) {
+    return Math.floor(Math.random() * (b - a) + a);
 }
 
-function randomInteger(min, max) {
-    let rand = min + Math.random() * (max - min);
-    return Math.round(rand);
+function changeNodes(childs, a, b) {
+    const parent = childs[a].parentNode;
+    const replaced = parent.replaceChild(childs[b], childs[a]);
+    parent.insertBefore(replaced, childs[b]);
 }
