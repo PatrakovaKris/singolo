@@ -14,19 +14,19 @@
             <div class="wrapper-header">
                 <h1>SINGOLO<span>*</span></h1>
                 <nav>
-                    <ul>
-                        <li><a href="#">HOME</a><span>&bull;</span></li>
-                        <li><a href="#">SERVICES</a><span>&bull;</span></li>
-                        <li><a href="#">PORTFOLIO</a><span>&bull;</span></li>
-                        <li><a href="#">ABOUT</a><span>&bull;</span></li>
-                        <li><a href="#">CONTACT</a></li>
+                    <ul id="header-nav">
+                        <li><a class="active" href="#home">HOME</a></li><span>&bull;</span>
+                        <li><a href="#services">SERVICES</a></li><span>&bull;</span>
+                        <li><a href="#portfolio">PORTFOLIO</a></li><span>&bull;</span>
+                        <li><a href="#about">ABOUT</a></li><span>&bull;</span>
+                        <li><a href="#contact">CONTACT</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
 
         <main>
-            <section class="slider">
+            <section class="slider" id="home">
                 <a class="slider-control slider-control_prev" href="#"></a>
                 <div class="slider-items">
                     <img src="assets/img/IV.png" title="image iPhone Vertical">
@@ -36,7 +36,7 @@
                 <a class="slider-control slider-control_next" href="#"></a>
             </section>
 
-            <section class="services">
+            <section class="services" id="services">
 
                 <div class="wrapper-services">
                     <h2>Our Services</h2>
@@ -109,19 +109,19 @@
 
             </section>
 
-            <section class="portfolio">
+            <section class="portfolio" id="portfolio">
                 <h3>Portfolio</h3>
                 <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
                 <nav class="portfolio-nav">
-                    <ul>
-                        <li><button class="btn-nav">All</button></li>
-                        <li><button class="btn-nav">Web Design</button></li>
-                        <li><button class="btn-nav">Graphic Design</button></li>
-                        <li><button class="btn-nav">Artwork</button></li>
+                    <ul id="tags">
+                        <li><button class="btn-nav active" value="All">All</button></li>
+                        <li><button class="btn-nav" value="Web Design">Web Design</button></li>
+                        <li><button class="btn-nav" value="Graphic Design">Graphic Design</button></li>
+                        <li><button class="btn-nav" value="Artwork">Artwork</button></li>
                     </ul>
                 </nav>
 
-                <div class="images-list">
+                <div class="images-list" id="images-list">
                     <div class="image">
                         <img src="assets/img/img1.png" alt="img1">
                     </div>
@@ -165,7 +165,7 @@
 
             </section>
 
-            <section class="about">
+            <section class="about" id="about">
 
                 <h3>About Us</h3>
                 <p><span>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi
@@ -214,7 +214,7 @@
             </section>
 
 
-            <section class="contact">
+            <section class="contact" id="contact">
 
                 <h3>Get a Quote</h3>
                 <p class="description"><span>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi
@@ -223,13 +223,13 @@
 
                 <div class="contact-wrapper">
                     <div class="contact-form">
-                        <form action="#" method="post">
-                            <input class="contact-field" type="text" name="name" placeholder="Name (Required)" required>
-                            <input class="contact-field" type="email" name="email" placeholder="Email (Required)" required>
-                            <input class="contact-field" type="text" name="subject" placeholder="Subject">
-                            <textarea class="contact-textarea contact-field" name="description"
+                        <form id="form" action="#" >
+                            <input class="contact-field" id="name" type="text" name="name" placeholder="Name (Required)" required>
+                            <input class="contact-field" id="email" type="email" name="email" placeholder="Email (Required)" required>
+                            <input class="contact-field" id="theme" type="text" name="subject" placeholder="Subject">
+                            <textarea class="contact-textarea contact-field" id="description" name="description"
                                       placeholder="Describe your object in detail..."></textarea>
-                            <button class="form-btn" type="submit">Submit</button>
+                            <button class="form-btn" type="submit" id="send">Submit</button>
                         </form>
                     </div>
                     <div class="contact-info">
@@ -249,6 +249,15 @@
                             <span class="contact-icon icon-mail"></span>
                             <a class="contacts-link" href="mailto:info@singolo.com">info@singolo.com</a>
                         </p>
+                    </div>
+                    <div id="modal" class="modal">
+                        <div class="modal-content">
+                            <p>Письмо отправлено<br>
+                                <span id="Subject">Тема: </span><br>
+                                <span id="Describe">Описание: </span><br>
+                            </p>
+                            <button class="close" id="ok">OK</button>
+                        </div>
                     </div>
 
                 </div>
@@ -271,5 +280,6 @@
 
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
