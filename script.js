@@ -1,10 +1,12 @@
 window.onload = function(){
+    console.log('yeeess))')
     addNavClickHandler();
     addTagsClickHandler();
     addImagesClickHandler();
     openModalBlock();
 
     Slider();
+    addPhoneClickHandler()
 }
 
 const activeClikedTag = (clickedTag) =>{
@@ -103,30 +105,30 @@ const openModalBlock = () =>{
 
 // Slider
 const Slider = () =>{
-    const sliderPrevBtn = document.querySelector(".slider-control_prev");
-    const sliderNextBtn = document.querySelector(".slider-control_next");
-    const slider = document.querySelector(".slider");
-    const slides = slider.querySelectorAll(".slider-items");
+    let sliderPrevBtn = document.querySelector(".slider-control_prev");
+    let sliderNextBtn = document.querySelector(".slider-control_next");
+    let slider = document.querySelector(".slider");
+    let slides = slider.querySelectorAll(".slider-items");
 
     sliderPrevBtn.addEventListener("click", () => {
         let index = sliderReset() - 1;
         if(index < 0) index = slides.length - 1;
-        slides[index].classList.add("slide--active");
+        slides[index].classList.add("slide-active");
         changeSlider(index);
     });
 
     sliderNextBtn.addEventListener("click", () => {
         let index = (sliderReset() + 1) % slides.length;
-        slides[index].classList.add("slide--active");
+        slides[index].classList.add("slide-active");
         changeSlider(index);
     });
 
     function sliderReset() {
         let index = 0;
         slides.forEach((elem, i) => {
-            if(elem.classList.contains("slide--active")) {
+            if(elem.classList.contains("slide-active")) {
                 index = i;
-                elem.classList.remove("slide--active");
+                elem.classList.remove("slide-active");
             }
         });
 
@@ -137,4 +139,15 @@ const Slider = () =>{
         slider.classList.toggle("slider-blue", slideNumber === 1);
     }
 
+}
+
+// OFF/ON Phone
+const addPhoneClickHandler = () =>{
+    let phones = document.querySelectorAll(".phone");
+
+    phones.forEach(el =>{
+        el.addEventListener('click', ()=>{
+            el.classList.toggle('off');
+        })
+    })
 }
