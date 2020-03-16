@@ -10,16 +10,16 @@
 
     <div class="wrapper">
 
-        <header>
-            <div class="wrapper-header">
-                <h1>SINGOLO<span>*</span></h1>
-                <nav>
-                    <ul id="header-nav">
-                        <li><a class="active" href="#home">HOME</a></li><span>&bull;</span>
-                        <li><a href="#services">SERVICES</a></li><span>&bull;</span>
-                        <li><a href="#portfolio">PORTFOLIO</a></li><span>&bull;</span>
-                        <li><a href="#about">ABOUT</a></li><span>&bull;</span>
-                        <li><a href="#contact">CONTACT</a></li>
+        <header class="header">
+            <div class="header__wrapper">
+                <h1 class="logo">SINGOLO<span>*</span></h1>
+                <nav class="header__nav">
+                    <ul id="header-nav" class="navigation">
+                        <li><a class="navigation__link active" href="#home">HOME</a></li><span>&bull;</span>
+                        <li><a class="navigation__link" href="#services">SERVICES</a></li><span>&bull;</span>
+                        <li><a class="navigation__link" href="#portfolio">PORTFOLIO</a></li><span>&bull;</span>
+                        <li><a class="navigation__link" href="#about">ABOUT</a></li><span>&bull;</span>
+                        <li><a class="navigation__link" href="#contact">CONTACT</a></li>
                     </ul>
                 </nav>
             </div>
@@ -27,40 +27,39 @@
 
         <main>
             <section class="slider" id="home">
+                <div class="slider__wripper">
+                    <button type="button" class="slider__control slider__control_prev"></button>
 
-                <div class="slider-wripper">
-                    <button type="button" class="slider-control slider-control_prev"></button>
-
-                    <div class="slider-items slide-active" >
-                        <div class="phone vertical">
+                    <div class="slider__item slider__item_active" >
+                        <div class="phone phone-vertical">
                             <img class ="phone-image" src="assets/img/phone-vertical-display.png" title="image iPhone Vertical">
                         </div>
-                        <div class="phone horizon">
+                        <div class="phone phone-horizon">
                             <img class ="phone-image" src="assets/img/phone-horizontal-display.png" title="image iPhone Horizont">
                         </div>
                     </div>
 
-                    <div class="slider-items" >
+                    <div class="slider__item" >
                         <img src="assets/img/phone-group.png" title="image Phone Group">
                     </div>
 
-                    <button type="button" class="slider-control slider-control_next"></button>
+                    <button type="button" class="slider__control slider__control_next"></button>
                 </div>
 
             </section>
 
             <section class="services" id="services">
 
-                <div class="wrapper-services">
+                <div class="services__wrapper">
                     <h2>Our Services</h2>
-                    <p><span>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi
+                    <p class="description"><span>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi
                         erat
                         porttitor</span> ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris
                         condimentum nibh.</p>
 
-                    <div class="services-list">
+                    <div class="layout-3-column">
 
-                        <div class="services-item">
+                        <div class="services__item">
                             <div class="icon">
                                 <img src="assets/img/pen.svg" alt="pen">
                             </div>
@@ -70,7 +69,7 @@
                             </p>
                         </div>
 
-                        <div class="services-item">
+                        <div class="services__item">
                             <div class="icon">
                                 <img src="assets/img/bubl.svg" alt="bubl">
                             </div>
@@ -80,7 +79,7 @@
                             </p>
                         </div>
 
-                        <div class="services-item">
+                        <div class="services__item">
                             <div class="icon">
                                 <img src="assets/img/heart.svg" alt="heart">
                             </div>
@@ -90,7 +89,7 @@
                             </p>
                         </div>
 
-                        <div class="services-item">
+                        <div class="services__item">
                             <div class="icon">
                                 <img src="assets/img/phone.svg" alt="phone">
                             </div>
@@ -99,7 +98,7 @@
                             </p>
                         </div>
 
-                        <div class="services-item">
+                        <div class="services__item">
                             <div class="icon">
                                 <img src="assets/img/bubble.svg" alt="bubble">
                             </div>
@@ -108,7 +107,7 @@
                                 venenatis lorem .</p>
                         </div>
 
-                        <div class="services-item">
+                        <div class="services__item">
                             <div class="icon">
                                 <img src="assets/img/star.svg" alt="star">
                             </div>
@@ -124,17 +123,17 @@
 
             <section class="portfolio" id="portfolio">
                 <h3>Portfolio</h3>
-                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-                <nav class="portfolio-nav">
-                    <ul id="tags">
-                        <li><button class="btn-nav active" value="All">All</button></li>
-                        <li><button class="btn-nav" value="Web Design">Web Design</button></li>
-                        <li><button class="btn-nav" value="Graphic Design">Graphic Design</button></li>
-                        <li><button class="btn-nav" value="Artwork">Artwork</button></li>
+                <p class="description portfolio_description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+                <nav class="portfolio__nav">
+                    <ul id="tags" class="tags">
+                        <li><button class="tag active" value="All">All</button></li>
+                        <li><button class="tag" value="Web Design">Web Design</button></li>
+                        <li><button class="tag" value="Graphic Design">Graphic Design</button></li>
+                        <li><button class="tag" value="Artwork">Artwork</button></li>
                     </ul>
                 </nav>
 
-                <div class="images-list" id="images-list">
+                <div class="layuot-4-column" id="images-list">
                     <div class="image">
                         <img src="assets/img/img1.png" alt="img1">
                     </div>
@@ -177,16 +176,16 @@
 
             <section class="about" id="about">
 
-                <h3>About Us</h3>
-                <p><span>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi
+                <h3 class="about__h3">About Us</h3>
+                <p class="description about_description"><span>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi
                     erat porttitor</span> ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris
                     condimentum nibh.</p>
 
-                <div class="people-list">
+                <div class="layout-3-column">
                     <div class="people">
-                        <img src="assets/img/foto1.png" alt="foto1" class="foto">
-                        <h3>Adam Jensen</h3>
-                        <p>Quisque luctus, quam eget molestie commodo, lacus purus<br> cursus purus, nec rutrum tellus dolor id lorem.</p>
+                        <img src="assets/img/foto1.png" alt="foto1" class="people__foto">
+                        <h3 class="people__name">Adam Jensen</h3>
+                        <p class="people__resume">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
                         <div class="links-list">
                             <img src="assets/img/facebook.png" class="link">
                             <img src="assets/img/google+.png" class="link">
@@ -196,9 +195,9 @@
                     </div>
 
                     <div class="people">
-                        <img src="assets/img/foto2.png" alt="foto2" class="foto">
-                        <h3>Desmond Miles</h3>
-                        <p>Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
+                        <img src="assets/img/foto2.png" alt="foto2" class="people__foto">
+                        <h3 class="people__name">Desmond Miles</h3>
+                        <p class="people__resume">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
                         <div class="links-list">
                             <img src="assets/img/facebook.png" class="link">
                             <img src="assets/img/google+.png" class="link">
@@ -208,9 +207,9 @@
                     </div>
 
                     <div class="people">
-                        <img src="assets/img/foto3.png" alt="foto3" class="foto">
-                        <h3>Scolara Visari</h3>
-                        <p>Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</p>
+                        <img src="assets/img/foto3.png" alt="foto3" class="people__foto">
+                        <h3 class="people__name">Scolara Visari</h3>
+                        <p class="people__resume">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</p>
                         <div class="links-list">
                             <img src="assets/img/facebook.png" class="link">
                             <img src="assets/img/google+.png" class="link">
@@ -227,19 +226,19 @@
             <section class="contact" id="contact">
 
                 <h3>Get a Quote</h3>
-                <p class="description"><span>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi
+                <p class="description description__contact"><span>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi
                     erat porttitor</span> ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris
                     condimentum nibh.</p>
 
-                <div class="contact-wrapper">
-                    <div class="contact-form">
+                <div class="contact__wrapper">
+                    <div class="contact__form">
                         <form id="form" action="#" >
-                            <input class="contact-field" id="name" type="text" name="name" placeholder="Name (Required)" required>
-                            <input class="contact-field" id="email" type="email" name="email" placeholder="Email (Required)" required>
-                            <input class="contact-field" id="theme" type="text" name="subject" placeholder="Subject">
-                            <textarea class="contact-textarea contact-field" id="description" name="description"
+                            <input class="contact__field" id="name" type="text" name="name" placeholder="Name (Required)" required>
+                            <input class="contact__field" id="email" type="email" name="email" placeholder="Email (Required)" required>
+                            <input class="contact__field" id="theme" type="text" name="subject" placeholder="Subject">
+                            <textarea class="contact__textarea contact__field" id="description" name="description"
                                       placeholder="Describe your object in detail..."></textarea>
-                            <button class="form-btn" type="submit" id="send">Submit</button>
+                            <button class="form__btn" type="submit" id="send">Submit</button>
                         </form>
                     </div>
                     <div class="contact-info">
@@ -248,16 +247,16 @@
                             nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat
                             libero. Nulla sed nunc et tortor luctuc faucibus. Morbi at aliquet turpis, et consequat felis.</p>
                         <p class="contacts">
-                            <span class="contact-icon icon-location"></span>
-                            <span class="contacts-link">Elm St. 14/05 Lost City</span>
+                            <span class="contact__icon icon-location"></span>
+                            <span class="contacts__link">Elm St. 14/05 Lost City</span>
                         </p>
                         <p class="contacts">
-                            <span class="contact-icon icon-phone"></span>
-                            <a class="contacts-link" href="tel:035283318635">03528 331 86 35</a>
+                            <span class="contact__icon icon-phone"></span>
+                            <a class="contacts__link" href="tel:035283318635">03528 331 86 35</a>
                         </p>
                         <p class="contacts">
-                            <span class="contact-icon icon-mail"></span>
-                            <a class="contacts-link" href="mailto:info@singolo.com">info@singolo.com</a>
+                            <span class="contact__icon icon-mail"></span>
+                            <a class="contacts__link" href="mailto:info@singolo.com">info@singolo.com</a>
                         </p>
                     </div>
                     <div id="modal" class="modal">
@@ -277,13 +276,13 @@
         </main>
 
         <footer>
-            <div class="footer-wrapper">
-                <span class="footer-copyright">&copy; Copyright 2013</span>
-                <div class="social-list">
-                    <img src="assets/img/facebook.png" class="social-link">
-                    <img src="assets/img/google+.png" class="social-link">
-                    <img src="assets/img/twitter.png" class="social-link">
-                    <img src="assets/img/linkedin.png" class="social-link">
+            <div class="footer__wrapper">
+                <span class="footer__copyright">&copy; Copyright 2013</span>
+                <div class="social">
+                    <img src="assets/img/facebook.png" class="social__link">
+                    <img src="assets/img/google+.png" class="social__link">
+                    <img src="assets/img/twitter.png" class="social__link">
+                    <img src="assets/img/linkedin.png" class="social__link">
                 </div>
             </div>
         </footer>
