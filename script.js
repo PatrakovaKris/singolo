@@ -10,6 +10,7 @@ window.onload = function(){
 }
 
 const activeClikedTag = (clickedTag) =>{
+    console.log(clickedTag);
     clickedTag.classList.add('active');
 }
 function removeClikedElem(parentBlock, classchildBlock , removeClass){
@@ -21,7 +22,7 @@ const addNavClickHandler = () =>{
     let menu= document.getElementById('header-nav');
     menu.addEventListener('click', (event)=>{
         let clickedTag = event.target;
-        removeClikedElem(menu, 'a' , 'active');
+        removeClikedElem(menu, '.navigation__link' , 'active');
         activeClikedTag(clickedTag);
         event.preventDefault();
         addScroll(clickedTag);
@@ -41,7 +42,7 @@ const addTagsClickHandler = () =>{
     let imagesList = document.getElementById('images-list');
     tags.addEventListener('click', (event)=>{
         let clickedTag = event.target;
-        removeClikedElem(tags, '.btn-nav' , 'active');
+        removeClikedElem(tags, '.tag' , 'active');
         removeClikedElem(imagesList, '.image img' , 'active');
         activeClikedTag(clickedTag);
         shuffleImages(images);
@@ -105,38 +106,38 @@ const openModalBlock = () =>{
 
 // Slider
 const Slider = () =>{
-    let sliderPrevBtn = document.querySelector(".slider-control_prev");
-    let sliderNextBtn = document.querySelector(".slider-control_next");
+    let sliderPrevBtn = document.querySelector(".slider__control_prev");
+    let sliderNextBtn = document.querySelector(".slider__control_next");
     let slider = document.querySelector(".slider");
-    let slides = slider.querySelectorAll(".slider-items");
+    let slides = slider.querySelectorAll(".slider__item");
 
     sliderPrevBtn.addEventListener("click", () => {
         let index = sliderReset() - 1;
         if(index < 0) index = slides.length - 1;
-        slides[index].classList.add("slide-active");
+        slides[index].classList.add("slider__item_active");
         changeSlider(index);
     });
 
     sliderNextBtn.addEventListener("click", () => {
         let index = (sliderReset() + 1) % slides.length;
-        slides[index].classList.add("slide-active");
+        slides[index].classList.add("slider__item_active");
         changeSlider(index);
     });
 
     function sliderReset() {
         let index = 0;
         slides.forEach((elem, i) => {
-            if(elem.classList.contains("slide-active")) {
+            if(elem.classList.contains("slider__item_active")) {
                 index = i;
-                elem.classList.remove("slide-active");
+                elem.classList.remove("slider__item_active");
             }
         });
 
         return index;
     }
     function changeSlider(slideNumber) {
-        slider.classList.toggle("slider-red", slideNumber === 0);
-        slider.classList.toggle("slider-blue", slideNumber === 1);
+        slider.classList.toggle("slider_backgroundred", slideNumber === 0);
+        slider.classList.toggle("slider_backgroundblue", slideNumber === 1);
     }
 
 }
@@ -147,7 +148,7 @@ const addPhoneClickHandler = () =>{
 
     phones.forEach(el =>{
         el.addEventListener('click', ()=>{
-            el.classList.toggle('off');
+            el.classList.toggle('phone-image_off');
         })
     })
 }
